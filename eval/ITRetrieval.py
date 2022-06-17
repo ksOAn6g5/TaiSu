@@ -237,34 +237,6 @@ def t2i_coco_cn(images, captions,target_img_index):
     medr = numpy.floor(numpy.median(ranks)) + 1
     return (r1, r5, r10, medr)
 
-
-f1="G:\multimodal-data\ckpt_web_RN101_ep100_50nodes_lit99.pt"
-f2="G:\multimodal-data\ckpt_web+ofa_RN101_ep100_50nodes_lit99.pt"
-f3="G:/RN_web1_lit.pt"
-f4='G:/RN_web2_lit112.pt'
-f5='G:/RN_web2_lit90.pt'
-f6='G:/RN_web2_lit105.pt'
-f7='G:/ViT_web2_lit119.pt'
-f8='G:/ViT_web+o_lit45.pt'
-f9='G:/vit_web+o_lit119.pt'
-f10="G:\\fintued_ViT_lit36.pt"
-f11="G:\\fintuned_Vit_lit26.pt"
-f12="G:\\fintune_vit_lit49.pt"
-f13="G:\\fintune_vit_lit43.pt"
-f14="G:\\fintune_vit_lit16.pt"
-f15="G:\\fintued_ViT_lit6.pt"
-f16="G:\\fintune_vit_lit0.pt"
-f17="G:\\fintune_vit_lit2.pt"
-f18="G:\\fintune_vit_lit4.pt"
-f19="G:\\fintune_vit_lit8.pt"
-f20="G:\\fintune_vit_lit10.pt"
-f21="G:\\fintune_vit_lit7.pt"
-
-p1="G:\ckpt\\rn101_web+ofa_lit119.pt"
-p2="G:\ckpt\\rn101_web133_lit119.pt"
-p3="G:\ckpt\\rn101_web173_lit119.pt"
-p4="G:\ckpt\\vit_web173_lit119.pt"
-p5="G:\ckpt\\vit_web133_lit119.pt"
 p6="G:\ckpt\\vit_web+ofa_lit119.pt"
 p7='G:/ckpt/rn101_wp_lit25.pt'
 p8='G:/ckpt/vit_wp_lit25.pt'
