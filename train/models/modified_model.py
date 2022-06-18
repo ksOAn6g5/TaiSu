@@ -140,7 +140,7 @@ class ModifiedResNet(nn.Module):
             x = self.avgpool(x)
             return x
 
-        x = x.type(self.conv1.weight.dtype)
+        x = x#.type(self.conv1.weight.dtype)
         x = stem(x)
         x = self.layer1(x)
         x = self.layer2(x)
@@ -200,7 +200,7 @@ class Transformer(nn.Module):
         return self.resblocks(x)
 
 
-class VisionTransformer(nn.Module):
+class VisualTransformer(nn.Module):
     def __init__(self, input_resolution: int, patch_size: int, width: int, layers: int, heads: int, output_dim: int):
         super().__init__()
         self.input_resolution = input_resolution
@@ -336,16 +336,17 @@ class CLIP(nn.Module):
         return self.visual.conv1.weight.dtype
 
     def encode_image(self, image):
-        return self.visual(image.type(self.dtype))
+        return self.visual(image)
+        #return self.visual(image.type(self.dtype))
 
     def encode_text(self, text):
-        x = self.token_embedding(text).type(self.dtype)  # [batch_size, n_ctx, d_model]
+        x = self.token_embedding(text)#.type(self.dtype)  # [batch_size, n_ctx, d_model]
 
-        x = x + self.positional_embedding.type(self.dtype)
+        x = x + self.positional_embedding#.type(self.dtype)
         x = x.permute(1, 0, 2)  # NLD -> LND
         x = self.transformer(x)
         x = x.permute(1, 0, 2)  # LND -> NLD
-        x = self.ln_final(x).type(self.dtype)
+        x = self.ln_final(x)#.type(self.dtype)
 
         # x.shape = [batch_size, n_ctx, transformer.width]
         # take features from the eot embedding (eot_token is the highest number in each sequence)
@@ -431,62 +432,4 @@ def build_model(state_dict: dict):
 
     convert_weights(model)
     model.load_state_dict(state_dict)
-    return model.eval()
-
-class CLIP_visual_Encoder(nn.Module):
-    def __init__(self,vision_layers,vision_width,embed_dim,image_resolution,vision_patch_size):
-        super(CLIP_visual_Encoder, self,).__init__()
-        #self.visual=clip.visual
-        if isinstance(vision_layers, (tuple, list)):
-            vision_heads = vision_width * 32 // 64
-            self.visual = ModifiedResNet(
-                layers=vision_layers,
-                output_dim=embed_dim,
-                heads=vision_heads,
-                input_resolution=image_resolution,
-                width=vision_width
-            )
-        else:
-            vision_heads = vision_width // 64
-            self.visual = VisionTransformer(
-                input_resolution=image_resolution,
-                patch_size=vision_patch_size,
-                width=vision_width,
-                layers=vision_layers,
-                heads=vision_heads,
-                output_dim=embed_dim
-            )
-    @property
-    def dtype(self):
-        return self.visual.conv1.weight.dtype
-    def encode_image(self, image):
-        return self.visual(image.type(self.dtype))
-
-
-def build_visual_encoder(state_dict: dict):
-    vit = "visual.proj" in state_dict
-    if vit:
-        vision_width = state_dict["visual.conv1.weight"].shape[0]
-        vision_layers = len([k for k in state_dict.keys() if k.startswith("visual.") and k.endswith(".attn.in_proj_weight")])
-        vision_patch_size = state_dict["visual.conv1.weight"].shape[-1]
-        grid_size = round((state_dict["visual.positional_embedding"].shape[0] - 1) ** 0.5)
-        image_resolution = vision_patch_size * grid_size
-    else:
-        counts: list = [len(set(k.split(".")[2] for k in state_dict if k.startswith(f"visual.layer{b}"))) for b in [1, 2, 3, 4]]
-        vision_layers = tuple(counts)
-        vision_width = state_dict["visual.layer1.0.conv1.weight"].shape[0]
-        output_width = round((state_dict["visual.attnpool.positional_embedding"].shape[0] - 1) ** 0.5)
-        vision_patch_size = None
-        assert output_width ** 2 + 1 == state_dict["visual.attnpool.positional_embedding"].shape[0]
-        image_resolution = output_width * 32
-
-    embed_dim = state_dict["text_projection"].shape[1]
-    model=CLIP_visual_Encoder(vision_layers,vision_width,embed_dim,image_resolution,vision_patch_size)
-
-    for key in ["input_resolution", "context_length", "vocab_size",'transformer']:
-        if key in state_dict:
-            del state_dict[key]
-    #convert_weights(model)
-    print(model.load_state_dict(state_dict,strict=False))
-    model.downsample_ratio=32
     return model.eval()

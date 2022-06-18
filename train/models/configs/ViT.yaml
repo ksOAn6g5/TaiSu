@@ -28,7 +28,7 @@ ViT-L/14:
     vision_layers: 24
     vision_width: 1024
     vision_patch_size: 14
-    context_length: 77
+    context_length: 52
     vocab_size: 50002
     transformer_width: 768
     transformer_heads: 12

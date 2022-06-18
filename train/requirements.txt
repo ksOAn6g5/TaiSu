@@ -1,0 +1,8 @@
+torch
+torchvision
+numpy
+lmdb
+yaml
+transformers
+sentencepiece
+json
