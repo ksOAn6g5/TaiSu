@@ -1,5 +1,7 @@
 # TaiSu
 TaiSu（太素）--a large scale Chinese multimodal dataset
+## Data download ##
+baidu cloud link:
 ## Pretrained models ##
  baidu cloud link:
 ## LICENCE ##
