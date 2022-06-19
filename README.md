@@ -1,6 +1,6 @@
 # TaiSu
 TaiSu（太素）--A 166M multimodal dataset for Chinese Vision-Language Pretraining
-[./imgs.all_wc.png]
+![word cloud](/imgs/all_wc.png)
 
 ## Data download ##
 Baidu cloud link:
