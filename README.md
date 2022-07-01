@@ -6,7 +6,7 @@ TaiSu（太素）--A 166M multimodal dataset for Chinese Vision-Language Pretrai
 The image urls and corresponding texts will be stored in a CSV file.
 The dataset is now under proccessing, we will release it as soon as possible.
 Baidu cloud link:
-* URLs&captions for TaiSu dataset:
+* URLs&captions for TaiSu dataset: https://pan.baidu.com/s/1YITGlMF2L7EFLZrLuETJKQ?pwd=tais
 
 ## Pre-extracted image embeddings
 We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variants. 
