@@ -16,7 +16,7 @@ We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variant
  for utilization
  ```
  from models.model_infer import build_lit
- lit=build_lit(visual_model_path='./models/RN101.pth',txt_model_path=XXX)
+ lit=build_lit(visual_model_path=path/to/visual/model/state_dict,txt_model_path==path/to/textual/model/state_dict)
  API:
     lit.encode_image(imgs)
     lit.encode_text(txt) 
