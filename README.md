@@ -13,7 +13,7 @@ We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variant
 ## Pretrained models ##
  Models trained on the web data of TaiSu and on the complete data of TaiSu are now availbale.
  Baidu cloud link：https://pan.baidu.com/s/1d3UKyQi7J4Qr1XE2j2V8og?pwd=0kjm 
- *for utilization:
+ * for utilization:
  ```
  from models.model_infer import build_lit
  lit=build_lit(visual_model_path=path/to/visual/model/state_dict,txt_model_path==path/to/textual/model/state_dict)
