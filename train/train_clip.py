@@ -90,7 +90,6 @@ def configure_optimizers(args,model_name, model,dataset_len,isViT=False):
     scheduler = get_cosine_schedule_with_warmup(optimizer, num_warmup_steps=args.num_warmup_steps,
                                                 num_training_steps=num_training_steps(args,dataset_len))
 
-    #yulonggaide
     # scheduler = get_cosine_schedule_with_warmup(optimizer, num_warmup_steps=args.num_warmup_steps,
     #                                             num_training_steps=91000)#num_training_steps(args,dataset_len))
 
