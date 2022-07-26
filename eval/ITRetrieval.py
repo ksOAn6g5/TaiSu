@@ -245,10 +245,10 @@ p8='G:/ckpt/vit_wp_lit25.pt'
 if __name__=="__main__":
     from models.model_infer import build_lit
     import torch.cuda.amp as amp
-    from bert_tokenizer import ChineseTokenizer
+    #from bert_tokenizer import ChineseTokenizer
     lit=build_lit(visual_model_path='./models/ViT-B-32.pth',txt_model_path=p8)
     lit=lit.cuda()
-    tokenizer=ChineseTokenizer()
+    tokenizer=SentencepieceChineseTokenizer(52)
     for data_name in ['flickr8k','flickr30k','muge','coco-cn']:
    # for data_name in ['coco-cn']:
         evalrank(lit,tokenizer,data_name,'ViT-B-32')
