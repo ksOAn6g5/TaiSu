@@ -1,5 +1,7 @@
 '''
 author yulong-XJTU
+Only the textual encoder of CLIP is trained, we modified the code of  CLIP that the visual encoder
+is delete during training,and the visual embeddings are pre-extraced.
 '''
 import torch
 import torch.distributed as dist
