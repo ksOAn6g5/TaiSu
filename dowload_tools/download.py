@@ -16,38 +16,37 @@ headers = {
 
 count=0
 
-def dowload_pic(pic_url,root):#下载单个图片
+def dowload_pic(pic_url,root):#download a single pic
 	global count
 	try:
 		suffix ='.jpg' #图片后缀
 		name = pic_url[8:48]
 		#for i in ['|','<','>','\\','/',':','?','*','"','.']:
 		for i in ['/','=','.',',']:
-		    name = name.replace(i,'')#去除不能出现在文件名中的字符
+		    name = name.replace(i,'')#delete illegal characters
 		path = root + name+ suffix
 		print(path)
-		if not os.path.exists(path):#确认是否为新图片
+		if not os.path.exists(path):
 			r = requests.get(pic_url,headers = headers,timeout = (5,50))
 			r.raise_for_status()
 			with open(path,'wb') as f:
 				f.write(r.content)
-			print(f'{path}下载成功！',flush = True)
+			print(f'{path}sucessfully downloaded！',flush = True)
 			count+=1
 	except:
-		print(f'{pic_url}下载失败！',flush = True)
+		print(f'{pic_url}failure！',flush = True)
 
 
  
 
-def download_pics(pic_urls,root):#采用多线程下载图片
-	print('\n开始下载')
-	print(f'{len(pic_urls)}个')
+def download_pics(pic_urls,root):#multi-threads
+	print('\n begin')
+	print(f'{len(pic_urls)}urls')
 	if(len(pic_urls)==0):
 		return ''
-	#root = 'G:/baidu_data/'#f'/storage-root/platform/baidu_download/baidu//{keyword}//'#默认保存在D盘，可根据需要自行修改
 	if not os.path.exists(root):
-		os.mkdir(root)#创建存放图片的文件夹
-	with ThreadPoolExecutor(max_workers = 50) as pool:#采用50个线程
+		os.mkdir(root)#creat directory
+	with ThreadPoolExecutor(max_workers = 50) as pool:
 		for pic_url in pic_urls:
 			pool.submit(dowload_pic,pic_url,root)
 
@@ -63,4 +62,3 @@ if __name__=='__main__':
     download_pics(urls,root)
     print(count)
            
-    #download_keywords(keywords)
