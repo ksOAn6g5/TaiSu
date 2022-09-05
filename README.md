@@ -12,6 +12,8 @@ Taisu data is available now.The image urls and corresponding texts are stored in
 Baidu cloud link:
 * URLs&captions for TaiSu dataset: https://pan.baidu.com/s/1YITGlMF2L7EFLZrLuETJKQ?pwd=tais
 
+Images can be downloaded using dowwnload_tool/download.py once the urls are ready.
+
 ## Pre-extracted image embeddings
 We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variants. 
 * Pre-extracted image features: 
