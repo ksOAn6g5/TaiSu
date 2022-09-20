@@ -36,7 +36,7 @@ Unless specifically labeled otherwise, these Datasets are provided to You under 
   
   Organization: Institute of Automation, Chinese Academy of Sciences (CASIA), Beijing, China
 ## Citation 
-'''
+```
 @inproceedings{
 liu2022taisu,
 title={TaiSu: A 166M Large-scale High-Quality Dataset for Chinese Vision-Language Pre-training},
@@ -45,4 +45,4 @@ booktitle={Thirty-sixth Conference on Neural Information Processing Systems Data
 year={2022},
 url={https://openreview.net/forum?id=iAxH-ikIP0I}
 }
-'''
+```
