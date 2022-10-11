@@ -30,6 +30,8 @@ We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variant
  API:
     lit.encode_image(imgs)
     lit.encode_text(txt) 
+    #The embeddings should be normalized to calculate cosine similarity
+    #emb=emb/emb.norm(dim=-1,keepdim=True)
  ```
  
 ## LICENCE ##
