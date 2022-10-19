@@ -16,7 +16,7 @@ Baidu cloud link:
 * URLs&captions for TaiSu dataset: https://pan.baidu.com/s/1YITGlMF2L7EFLZrLuETJKQ?pwd=tais
 
 Once the URLs are ready, images can be downloaded using **download_tool/download.py**.
-
+ The download process is also influened by your network. The website may forbid your ip as it detected a lot of requests from the same ip, so you may need a ip proxy pool for your web crawler.
 ## Pre-extracted image embeddings
 We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variants. 
 * Pre-extracted image features: 
