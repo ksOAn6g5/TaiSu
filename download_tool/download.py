@@ -46,7 +46,7 @@ def download_pics(pic_urls,root):#multi-threads
 		return ''
 	if not os.path.exists(root):
 		os.mkdir(root)#creat directory
-	with ThreadPoolExecutor(max_workers = 50) as pool:
+	with ThreadPoolExecutor(max_workers = 10) as pool:
 		for pic_url in pic_urls:
 			pool.submit(dowload_pic,pic_url,root)
 
