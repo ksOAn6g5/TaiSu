@@ -28,6 +28,7 @@ We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variant
  from models.model_infer import build_lit
  from clip.clip import _transform
  from utils.sp_tokenizer import SentencepieceChineseTokenizer
+ from PIL import Image
  lit=build_lit(visual_model_path=path/to/visual/model/state_dict,txt_model_path==path/to/textual/model/state_dict)
  '''API:
     lit.encode_image(imgs)
