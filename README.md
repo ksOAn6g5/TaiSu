@@ -29,13 +29,13 @@ We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variant
  from clip.clip import _transform
  from utils.sp_tokenizer import SentencepieceChineseTokenizer
  from PIL import Image
- lit=build_lit(visual_model_path=path/to/visual/model/state_dict,txt_model_path==path/to/textual/model/state_dict)
+ lit=build_lit(visual_model_path=path/to/visual/model/state_dict,txt_model_path=path/to/textual/model/state_dict)
  '''API:
     lit.encode_image(imgs)
     lit.encode_text(txt) '''
  device = "cpu"
  transform=_transform(n_px=224)
- tokenzier=SentencepieceChineseTokenizer(context_length=52)
+ tokenizer=SentencepieceChineseTokenizer(context_length=52)
  image = transform(Image.open("xxx.png")).unsqueeze(0).to(device)
  texts = tokenizer.tokenize(['我爱我的家乡','xxxx']).to(device)
  with torch.no_grad():
