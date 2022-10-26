@@ -30,6 +30,7 @@ We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variant
  from utils.sp_tokenizer import SentencepieceChineseTokenizer
  from PIL import Image
  lit=build_lit(visual_model_path=path/to/visual/model/state_dict,txt_model_path=path/to/textual/model/state_dict)
+ #viusal model and textual model should be matched.
  '''API:
     lit.encode_image(imgs)
     lit.encode_text(txt) '''
