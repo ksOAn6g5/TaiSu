@@ -26,22 +26,27 @@ We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variant
  * for utilization:
  ```
  from models.model_infer import build_lit
+ from clip.clip import _transform
+ from utils.sp_tokenizer import SentencepieceChineseTokenizer
  lit=build_lit(visual_model_path=path/to/visual/model/state_dict,txt_model_path==path/to/textual/model/state_dict)
- API:
+ '''API:
     lit.encode_image(imgs)
-    lit.encode_text(txt) 
-    # before sending images or texts to model, preprocessing is needed
-    #for images: 
-    from clip.clip import _transform
-    image_transform=_transform(n_px=224)
-    #for texts : 
-    from utils.sp_tokenizer import SentencepieceChineseTokenizer
+    lit.encode_text(txt) '''
+    device = "cpu"
+    transform=_transform(n_px=224)
     tokenzier=SentencepieceChineseTokenizer(context_length=52)
-    #The embeddings should be normalized to calculate cosine similarity
-    #emb1=emb1/emb1.norm(dim=-1,keepdim=True)
-    #emb2=emb2/emb2.norm(dim=-1,keepdim=True)
-    #logits=emb1@emb2.t()
+    image = transform(Image.open("xxx.png")).unsqueeze(0).to(device)
+    texts = tokenizer.tokenize(['我爱我的家乡','xxxx']).to(device)
+    with torch.no_grad():
+      img_emb= lit.encode_image(image)
+      txt_emb=lit.encode_text(texts)
+      #The embeddings should be normalized to calculate cosine similarity
+      img_emb=img_emb/img_emb.norm(dim=-1,keepdim=True)
+      txt_emb=txt_emb/txt_emb.norm(dim=-1,keepdim=True)
+      logits=img_emb@txt_emb.t()     
+    
  ```
+
  
 ## LICENCE ##
 Unless specifically labeled otherwise, these Datasets are provided to You under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (“CC BY-NC-SA 4.0”), with the additional terms included herein. The CC BY-NC-SA 4.0 may be accessed at https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode. When You download or use the Datasets from the Website or elsewhere, You are agreeing to comply with the terms of CC BY-NC-SA 4.0, and also agreeing to the Dataset Terms. Where these Dataset Terms conflict with the terms of CC BY-NC-SA 4.0, these Dataset Terms shall prevail. We reiterate once again that this dataset is used only for non-commercial purposes such as academic research, teaching, or scientific publications. We prohibits You from using the dataset or any derivative works for commercial purposes, such as selling data or using it for commercial gain.
