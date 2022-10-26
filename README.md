@@ -32,7 +32,7 @@ We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variant
     lit.encode_text(txt) 
     # before sending images or texts to model, preprocessing is needed
     #for images: from clip.clip import _transform
-    #for texts : 
+    #for texts : from utils.sp_tokenizer import SentencepieceChineseTokenizer
     #The embeddings should be normalized to calculate cosine similarity
     #emb1=emb1/emb1.norm(dim=-1,keepdim=True)
     #emb2=emb2/emb2.norm(dim=-1,keepdim=True)
