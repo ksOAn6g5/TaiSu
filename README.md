@@ -17,7 +17,7 @@ Baidu cloud link:
 
 Once the URLs are ready, images can be downloaded using **download_tool/download.py**.
  The download process is also influenced by your network. The website may forbid your ip as it detected a lot of requests from the same ip, so you may need an IP proxy pool for your web crawler.
-* It seems that some URLs are expired, we will try other methods to provide the data.
+* It seems that some URLs are expired, we will try other methods to provide the data. --2022/10/27
 ## Pre-extracted image embeddings
 We provide the image embeddings extracted with CLIP's RN101 and ViT-B/32 variants. 
 * Pre-extracted image features: 
