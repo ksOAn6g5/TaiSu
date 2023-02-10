@@ -12,6 +12,10 @@ TaiSu（太素）--A 166M multimodal dataset for Chinese Vision-Language Pretrai
 
 ## Dataset download ##
 Since most of the original urls are expired, we decided to directly provide the images and corresponding captions. To make the download process easier, we split the image set into more than 30 parts, and the captions are gathered in a single JSON file whose format of the content is shown in ![captions](/imgs/image.png).  
+```
+  {id:{'w':*,'g':*}}
+  #where 'w' denotes web caption and 'g' denotes generated caption. 
+```
 All the data can be download by the following link: <https://pan.baidu.com/s/1F5aKsurZkjZie09GsseOlw?pwd=vstf>
 
 The files with the suffix of '.tgz' need first to be uncompressed to a file with the suffix of '.tar' using the command line ```pigz -d baidu_images*.tgz ```.
