@@ -12,10 +12,11 @@ TaiSu（太素）--A 166M multimodal dataset for Chinese Vision-Language Pretrai
 
 ## Dataset download ##
 Since most of the original urls are expired, we decided to directly provide the images and corresponding captions. To make the download process easier, we split the image set into more than 30 parts, and the captions are gathered in a single JSON file whose format of the content is shown in ![captions](/imgs/image.png).  
-All the data can be download by the follwing link: <https://pan.baidu.com/s/1F5aKsurZkjZie09GsseOlw?pwd=vstf>
+All the data can be download by the following link: <https://pan.baidu.com/s/1F5aKsurZkjZie09GsseOlw?pwd=vstf>
 
 The files with the suffix of '.tgz' need first to be uncompressed to a file with the suffix of '.tar' with the command line ```pigz -d baidu_images*.tgz ```.
 Enven though a part of the images are damaged or lossed because of some reasons, you can still access to the most part of TaiSu's data.
+Each image and its captions can be matched by the id, for example, 'img1baiducomitu1848496827104259151'.
 
 ## Pretrained models ##
  Models trained on the web data of TaiSu and on the complete data of TaiSu are now availbale.
@@ -49,6 +50,9 @@ Enven though a part of the images are damaged or lossed because of some reasons,
  
 ## LICENCE ##
 Unless specifically labeled otherwise, these Datasets are provided to You under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (“CC BY-NC-SA 4.0”), with the additional terms included herein. The CC BY-NC-SA 4.0 may be accessed at https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode. When You download or use the Datasets from the Website or elsewhere, You are agreeing to comply with the terms of CC BY-NC-SA 4.0, and also agreeing to the Dataset Terms. Where these Dataset Terms conflict with the terms of CC BY-NC-SA 4.0, these Dataset Terms shall prevail. We reiterate once again that this dataset is used only for non-commercial purposes such as academic research, teaching, or scientific publications. We prohibits You from using the dataset or any derivative works for commercial purposes, such as selling data or using it for commercial gain.
+
+If any of the images belongs to you and you would like it removed, please kindly inform us, we will remove it from our dataset immediately.
+
 ## Contact
   Email:datasets_2022@outlook.com
   
