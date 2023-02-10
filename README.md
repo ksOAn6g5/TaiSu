@@ -11,7 +11,8 @@ TaiSu（太素）--A 166M multimodal dataset for Chinese Vision-Language Pretrai
 ![word cloud](/imgs/all_wc.png)
 
 ## Dataset download ##
-Since most of the original urls are expired, we decided to directly provide the images and corresponding captions. To make the download process easier, we split the image set into more than 30 parts, and the captions are gathered in a single json file. 
+Since most of the original urls are expired, we decided to directly provide the images and corresponding captions. To make the download process easier, we split the image set into more than 30 parts, and the captions are gathered in a single json file whose format of content is shown in ![captions](/imgs/image.png).  
+All the data can be download by the follwing link: <https://pan.baidu.com/s/1F5aKsurZkjZie09GsseOlw?pwd=vstf>
 
 ## Pretrained models ##
  Models trained on the web data of TaiSu and on the complete data of TaiSu are now availbale.
