@@ -1,5 +1,5 @@
 # TaiSu(太素)
-TaiSu: A 166M Large-scale High-Quality Dataset for Chinese Vision-Language Pre-training
+**TaiSu: A 166M Large-scale High-Quality Dataset for Chinese Vision-Language Pre-training**
 
 This paper has been accepted by NeurIPS 2022. 
 * paper link: https://openreview.net/pdf?id=iAxH-ikIP0I
