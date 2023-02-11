@@ -1,4 +1,4 @@
-# TaiSu(太素--大规模中文视觉语言预训练数据集)
+# TaiSu(太素--亿级大规模中文视觉语言预训练数据集)
 **TaiSu: A 166M Large-scale High-Quality Dataset for Chinese Vision-Language Pre-training**
 
 This paper has been accepted by NeurIPS 2022. 
