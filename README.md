@@ -1,6 +1,7 @@
-# TaiSu
-TaiSu（太素）--A 166M multimodal dataset for Chinese Vision-Language Pretraining
+# TaiSu(太素)
+TaiSu:A 166M multimodal dataset for Chinese Vision-Language Pretraining
 
+This paper has been accepted by NeurIPS 2022. 
 * paper link: https://openreview.net/pdf?id=iAxH-ikIP0I
 
 * Dataset Construction:
