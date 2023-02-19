@@ -22,7 +22,7 @@ All the data can be downloaded via the following link: <https://pan.baidu.com/s/
 The files with the suffix of '.tgz' need first to be uncompressed to a file with the suffix of '.tar' using the command line ```pigz -d baidu_images*.tgz ```.
 Even though a part of the images is damaged or lost because of some reasons, you can still access the most part of TaiSu's data. Each image and its captions can be matched by the id, for example, 'img1baiducomitu1848496827104259151'.
 
-`Here is a tutorial that tells you how to download the files from BaiduCloud to your sever:` <https://blog.csdn.net/wxplol/article/details/115283527>. `Hope it can help you.`
+`Here is a tutorial that tells you how to download the files from BaiduCloud to your server:` <https://blog.csdn.net/wxplol/article/details/115283527>. `Hope it can help you.`
 
 ## Pretrained models ##
  Models trained on the web data of TaiSu and on the complete data of TaiSu are now availbale.
