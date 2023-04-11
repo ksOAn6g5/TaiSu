@@ -39,7 +39,8 @@ with open(path1, 'r', encoding='utf-8') as f:
         while True :
             for line_data in f:
                if ':' in line_data :
-                 data= json.loads(line_data)#load to json
+                 print(line_data,'\n')
+                 #data= json.loads(line_data)#load to json
                  #other operations
                  # ...
                else:
