@@ -14,7 +14,8 @@ This paper has been accepted by NeurIPS 2022.
 ## Dataset download ##
 Since most of the original urls are expired, we decided to directly provide the images and corresponding captions. To make the download process easier, we split the image set into more than 30 parts, and the captions are gathered in a single TXT file whose format of the content is shown in ![captions](/imgs/txt_file.png).  
 ```
-  ID*****Web_caption*****Generated Caption 
+  ID*****Web_caption*****Generated Caption
+  # Empty captions are replaced  with "None"
 ```
 All the data can be downloaded via the following link: <https://pan.baidu.com/s/1F5aKsurZkjZie09GsseOlw?pwd=vstf>
 
