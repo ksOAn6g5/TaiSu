@@ -12,44 +12,14 @@ This paper has been accepted by NeurIPS 2022.
 ![word cloud](/imgs/all_wc.png)
 
 ## Dataset download ##
-Since most of the original urls are expired, we decided to directly provide the images and corresponding captions. To make the download process easier, we split the image set into more than 30 parts, and the captions are gathered in a single JSON file whose format of the content is shown in ![captions](/imgs/image.png).  
+Since most of the original urls are expired, we decided to directly provide the images and corresponding captions. To make the download process easier, we split the image set into more than 30 parts, and the captions are gathered in a single TXT file whose format of the content is shown in ![captions](/imgs/txt_file.png).  
 ```
-  {id:{'w':*,'g':*}}
-  #where 'w' denotes web caption and 'g' denotes generated caption. 
+  ID*****Web_caption*****Generated Caption 
 ```
 All the data can be downloaded via the following link: <https://pan.baidu.com/s/1F5aKsurZkjZie09GsseOlw?pwd=vstf>
 
 The files with the suffix of '.tgz' need first to be uncompressed to a file with the suffix of '.tar' using the command line ```pigz -d baidu_images*.tgz ```.
 Even though a part of the images is damaged or lost because of some reasons, you can still access the most part of TaiSu's data. Each image and its captions can be matched by the id, for example, 'img1baiducomitu1848496827104259151'.
-
-About how to load a large JSON file:https://github.com/ksOAn6g5/TaiSu/issues/5#issuecomment-1499949063
-```
-'''
-json file format:
-line1   {
-line2    id1:{'g':xxx,'w':xxx},
-line3    id2:{'g':xxx,'w':xxx},
-.....    ....
-line N   }
-'''
-import json
-path1 ='path to file '
-with open(path1, 'r', encoding='utf-8') as f:
-    try:
-        while True :
-            for line_data in f:
-               if ':' in line_data :
-                 print(line_data,'\n')
-                 #data= json.loads(line_data)#load to json
-                 #other operations
-                 # ...
-               else:
-                 break
-    except Exception as e:
-        print(e)
-        f.close()
-```
-
 
 `Here is a tutorial that tells you how to download the files from BaiduCloud to your server:` <https://blog.csdn.net/wxplol/article/details/115283527>. `Hope it can help you.`
 
