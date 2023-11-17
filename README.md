@@ -17,7 +17,7 @@ Since most of the original urls are expired, we decided to directly provide the 
   ID*****Web_caption*****Generated Caption
   # Empty captions are replaced  with "None"
 ```
-All the data can be downloaded via the following link: <https://pan.baidu.com/s/1F5aKsurZkjZie09GsseOlw?pwd=vstf>
+In order to download Taisu, please send an Email to <datasets_2022@outlook.com>, indicating your organization in the email, we will give you feedback as soon as possible. 
 
 The files with the suffix of '.tgz' need first to be uncompressed to a file with the suffix of '.tar' using the command line ```pigz -d baidu_images*.tgz ```.
 Even though a part of the images is damaged or lost because of some reasons, you can still access the most part of TaiSu's data. Each image and its captions can be matched by the id, for example, 'img1baiducomitu1848496827104259151'.
